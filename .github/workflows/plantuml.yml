@@ -28,7 +28,7 @@ jobs:
 
       - name: Commit and push diagrams
         env:
-          TEST_PLANTUML: ${{ secrets.TEST_PLANTUML }}
+          TEST_PLANTUML: ${{ secrets.test_plantuml }}
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
