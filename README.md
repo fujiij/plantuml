@@ -1,4 +1,4 @@
 # plantuml
 
 Test
-![PlanUML Diagram Test1](../diagrams/Test1.png)
+![PlanUML Diagram test1](../diagrams/test1.png)
