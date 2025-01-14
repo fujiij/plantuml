@@ -8,9 +8,9 @@ interface cmx.inference.MusicCalculator {
 
 class SCCGenerator implements cmx.inference.MusicCalculator
 note bottom of SCCGenerator
-    MusicCalculator implementation for the MELODY layer.
+    MusicCalculator implementation for the MELODY layer
     SCCGenerator updates the MIDI sequence being played
-    in real-time.
+    in real-time!
 end note
 
 class NoteSeqGeneratorX implements cmx.inference.MusicCalculator
