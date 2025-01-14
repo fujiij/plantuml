@@ -27,11 +27,10 @@ jobs:
           find diagrams -name "*.puml" -exec plantuml {} \;
 
       - name: Commit and push diagrams
-        env:
-          TEST_PLANTUML: ${{ secrets.TEST_PLANTUML }}
         run: |
-          git config --global user.name 'GitHub Action'
-          git config --global user.email 'action@github.com'
+          git config user.name 'GitHub Action'
+          git config user.email 'action@github.com'
           git add diagrams/*.png
           git commit -m 'Auto-generate PlantUML diagrams' -a
+          git pull
           git push
