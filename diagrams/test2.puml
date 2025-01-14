@@ -7,10 +7,10 @@ package "cmx" {
         interface MusicCalculator {
             updated(int var1, int var2, String var3, MusicRepresentation var4)
         }
-        class SCCGenerator implements MusicCalculator
     }
 }
 
+class SCCGenerator implements cmx.inference.MusicCalculator
 note bottom of SCCGenerator
     MusicCalculator implementation for the MELODY layer
     SCCGenerator updates the MIDI sequence being played
