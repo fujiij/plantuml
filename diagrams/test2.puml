@@ -10,8 +10,8 @@ package "cmx" {
     }
 }
 
-class SCCGenerator implements cmx.inference.MusicCalculator
-class NoteSeqGeneratorX implements cmx.inference.MusicCalculator
+class SCCGenerator implements MusicCalculator
+class NoteSeqGeneratorX implements MusicCalculator
 
 note bottom of SCCGenerator
     MusicCalculator implementation for the MELODY layer
