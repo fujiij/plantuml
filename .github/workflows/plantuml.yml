@@ -33,5 +33,5 @@ jobs:
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
           git add diagrams/*.png
-          git commit -m 'Auto-generate PlantUML diagrams'
+          git commit -m 'Auto-generate PlantUML diagrams' -a
           git push
