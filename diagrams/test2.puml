@@ -2,7 +2,7 @@
 'https://plantuml.com/class-diagram
 hide empty members
 
-packages "cmx" {
+package "cmx" {
     package "inference" {
         interface MusicCalculator {
             updated(int var1, int var2, String var3, MusicRepresentation var4)
