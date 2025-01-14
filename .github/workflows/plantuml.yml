@@ -24,6 +24,8 @@ jobs:
           find diagrams -name "*.puml" -exec plantuml {} \;
 
       - name: Commit and push diagrams
+        env:
+          GH_PAT: ${{ secrets.TEST_PLANTUML }}
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
