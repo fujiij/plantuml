@@ -25,8 +25,9 @@ jobs:
           java-version: '21'
           
       - name: Download specific version of PlantUML 
-        run: wget https://github.com/plantuml/plantuml/releases/download/v1.2025.0/plantuml.jar -O plantuml.jar
-# v1.2024.7
+        # run: wget https://github.com/plantuml/plantuml/releases/download/v1.2025.0/plantuml.jar -O plantuml.jar
+        run: wget https://github.com/plantuml/plantuml/releases/download/v1.2024.7/plantuml.jar -O plantuml.jar
+
 
       # - name: Set up PlantUML
       #   run: sudo apt-get install plantuml
