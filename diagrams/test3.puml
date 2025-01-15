@@ -23,26 +23,28 @@ package "cmx" {
     package "filewrappers" {
         interface SCC {
             Part[]
-            interface Part
         }
+        interface Part
+        SCC +-- Part
         class SCCDataSet implements SCC {
             List<Part> parts
         }
+        class PartImpl implements Part
+        SCCDataSet +-- PartImpl
+        note right of PartImpl
+            The actual class name is SCCDataSet.Part
+        end note
+
         class PianoRollDataModel implements cmx.misc.DataModel
         class PartImpl implements Part
+        PartImpl +-- PianoRollDataModel
     }
     package "misc" {
         interface PianoRoll {
-            interface DataModel
         }
+        interface DataModel
+        PianoRoll +-- DataModel
     }
 }
-
-cmx.filewrappers.SCCDataSet +-- cmx.filewrappers.PartImpl
-note right of cmx.filewrappers.PartImpl
-    The actual class name is SCCDataSet.Part
-end note
-
-cmx.filewrappers.PartImpl +-- cmx.filewrappers.PianoRollDataModel
 
 @enduml
