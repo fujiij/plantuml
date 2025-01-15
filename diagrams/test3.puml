@@ -38,10 +38,10 @@ package "cmx" {
 }
 
 cmx.filewrappers.SCC +-- cmx.filewrappers.Part
-PianoRoll +-- DataModel
+cmx.misc.PianoRoll +-- cmx.misc.DataModel
 
 cmx.filewrappers.SCCDataSet +-- cmx.filewrappers.PartImpl
-note right of PartImpl
+note right of cmx.filewrappers.PartImpl
     The actual class name is SCCDataSet.Part
 end note
 
