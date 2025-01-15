@@ -20,6 +20,12 @@ class MusicData {
 }
 
 package "cmx" {
+    package "misc" {
+        interface PianoRoll {
+        }
+        interface DataModel
+        PianoRoll +-- DataModel
+    }
     package "filewrappers" {
         interface SCC {
             Part[]
@@ -35,15 +41,8 @@ package "cmx" {
             The actual class name is SCCDataSet.Part
         end note
 
-        class PianoRollDataModel implements cmx.misc.DataModel
-        class PartImpl implements Part
+        class PianoRollDataModel implements DataModel
         PartImpl +-- PianoRollDataModel
-    }
-    package "misc" {
-        interface PianoRoll {
-        }
-        interface DataModel
-        PianoRoll +-- DataModel
     }
 }
 
