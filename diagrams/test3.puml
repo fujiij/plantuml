@@ -19,31 +19,29 @@ class MusicData {
     channel_acc: Int
 }
 
-package "cmx" {
-    package "misc" {
-        interface PianoRoll {
-        }
-        interface DataModel
-        PianoRoll +-- DataModel
+package "cmx.misc" {
+    interface PianoRoll {
     }
-    package "filewrappers" {
-        interface SCC {
-            Part[]
-        }
-        interface Part
-        SCC +-- Part
-        class SCCDataSet implements SCC {
-            List<Part> parts
-        }
-        class PartImpl implements Part
-        SCCDataSet +-- PartImpl
-        note right of PartImpl
-            The actual class name is SCCDataSet.Part
-        end note
+    interface DataModel
+    PianoRoll +-- DataModel
+}
+package "cmx.filewrappers" {
+    interface SCC {
+        Part[]
+    }
+    interface Part
+    SCC +-- Part
+    class SCCDataSet implements SCC {
+        List<Part> parts
+    }
+    class PartImpl implements Part
+    SCCDataSet +-- PartImpl
+    note right of PartImpl
+        The actual class name is SCCDataSet.Part
+    end note
 
-        class PianoRollDataModel implements cmx.misc.DataModel
-        PartImpl +-- PianoRollDataModel
-    }
+    class PianoRollDataModel implements cmx.misc.DataModel
+    PartImpl +-- PianoRollDataModel
 }
 
 @enduml
