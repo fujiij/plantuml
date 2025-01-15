@@ -45,3 +45,9 @@ jobs:
           git commit -m 'Auto-generate PlantUML diagrams' -a || echo "No changes to commit"
           git pull
           git push || echo "No changes to push"
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3 
+        with: 
+          name: plantuml-diagrams 
+          path: diagrams/*.png
