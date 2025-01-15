@@ -23,8 +23,8 @@ package "cmx" {
     package "filewrappers" {
         interface SCC {
             Part[]
+            interface Part
         }
-        interface Part
         class SCCDataSet implements SCC {
             List<Part> parts
         }
@@ -32,13 +32,11 @@ package "cmx" {
         class PartImpl implements Part
     }
     package "misc" {
-        interface PianoRoll
-        interface DataModel
+        interface PianoRoll {
+            interface DataModel
+        }
     }
 }
-
-cmx.filewrappers.SCC +-- cmx.filewrappers.Part
-cmx.misc.PianoRoll +-- cmx.misc.DataModel
 
 cmx.filewrappers.SCCDataSet +-- cmx.filewrappers.PartImpl
 note right of cmx.filewrappers.PartImpl
