@@ -41,7 +41,7 @@ package "cmx" {
             The actual class name is SCCDataSet.Part
         end note
 
-        PianoRoll.DataModel <|-- PianoRollDataModel
+        DataModel <|.. PianoRollDataModel
         PartImpl +-- PianoRollDataModel
     }
 }
