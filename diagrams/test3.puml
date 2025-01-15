@@ -40,7 +40,7 @@ package "cmx.filewrappers" {
         The actual class name is SCCDataSet.Part
     end note
 
-    class PianoRollDataModel implements cmx.misc.DataModel
+    class PianoRollDataModel implements cmx.misc.PianoRoll.DataModel
     PartImpl +-- PianoRollDataModel
 }
 
