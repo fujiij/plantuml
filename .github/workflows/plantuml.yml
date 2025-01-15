@@ -24,9 +24,9 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
           
-      - name: Download specific version of PlantUML 
-        # run: wget https://github.com/plantuml/plantuml/releases/download/v1.2025.0/plantuml.jar -O plantuml.jar
-        run: wget https://github.com/plantuml/plantuml/releases/download/v1.2024.7/plantuml.jar -O plantuml.jar
+      - name: Download specific version of PlantUML
+        run: wget https://github.com/plantuml/plantuml/releases/download/v1.2025.0/plantuml.jar -O plantuml.jar
+        # run: wget https://github.com/plantuml/plantuml/releases/download/v1.2024.7/plantuml.jar -O plantuml.jar
 
 
       # - name: Set up PlantUML
@@ -40,8 +40,8 @@ jobs:
         run: |
           git config user.name 'GitHub Action'
           git config user.email 'action@github.com'
-          git add diagrams/*.png
+          git add diagrams/*.png || true
           git status
-          git commit -m 'Auto-generate PlantUML diagrams' -a
+          git commit -m 'Auto-generate PlantUML diagrams' -a || echo "No changes to commit"
           git pull
-          git push
+          git push || echo "No changes to push"
